@@ -1,7 +1,7 @@
 import prisma from '@/app/libs/prismadb';
 import { NextResponse } from 'next/server';
 
-export default async function handler(
+export default async function (
   req: Request,
   { params }: { params: { id: string } }
 ) {
