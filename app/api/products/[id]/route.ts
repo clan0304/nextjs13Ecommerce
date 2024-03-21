@@ -1,17 +1,25 @@
 import prisma from '@/app/libs/prismadb';
 import { NextResponse } from 'next/server';
 
-export default async function GET(
+export default async function handler(
   req: Request,
   { params }: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { method } = req;
 
-  const product = await prisma.product.findUnique({
-    where: {
-      id: id,
-    },
+  if (method === 'GET') {
+    const { id } = params;
+    const product = await prisma.product.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    return NextResponse.json(product);
+  }
+
+  return new Response(null, {
+    status: 405,
+    statusText: 'Method Not Allowed',
   });
-
-  return NextResponse.json(product);
 }
