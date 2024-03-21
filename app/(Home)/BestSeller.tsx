@@ -9,7 +9,7 @@ const BestSeller = async () => {
 
   return (
     <div className="flex flex-col items-center gap-3 w-full text-center bg-slate-100 py-5 px-3">
-      <p>What's the best?</p>
+      <p>What&apos;s the best?</p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-x-3 gap-y-3 pt-5 text-left">
         {popularProducts.map((item) => (
           <Link href={`/collections/${item.id}`} key={item.id}>
