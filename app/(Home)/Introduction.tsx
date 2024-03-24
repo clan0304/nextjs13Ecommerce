@@ -2,11 +2,15 @@ import { AiTwotoneSafetyCertificate } from 'react-icons/ai';
 
 const Introduction = () => {
   return (
-    <div className="bg-blue-300 flex flex-col w-full items-center pb-5">
-      <p className="my-3">Australia&apos;s Marketplace for Sustainable Tech</p>
-      <p>Explore a wide variety of Headphones, EarPhones</p>
-      <div className="bg-white flex flex-col gap-3 w-4/5 rounded-lg py-5 mt-3 px-2">
-        <div className="flex flex-col gap-2">
+    <div className="bg-blue-300 flex flex-col w-full pb-5 pl-2">
+      <div className="flex flex-col gap-5">
+        <p className="my-3">
+          Australia&apos;s Marketplace for Sustainable Tech
+        </p>
+        <p>Explore a wide variety of Headphones, EarPhones</p>
+      </div>
+      <div className="bg-white flex lg:flex-row flex-col gap-3 w-4/5 rounded-lg py-5 mt-3 px-2 lg:px-6 lg:gap-6 self-center">
+        <div className="flex flex-col gap-2 lg:w-1/3">
           <div className="flex gap-3">
             <AiTwotoneSafetyCertificate size={20} />
             <p>Save Up To 70%</p>
@@ -16,7 +20,7 @@ const Introduction = () => {
             Earphones.
           </p>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 lg:w-1/3">
           <div className="flex gap-3">
             <AiTwotoneSafetyCertificate size={20} />
             <p>14 Days Free Returns</p>
@@ -28,7 +32,7 @@ const Introduction = () => {
             us.
           </p>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 lg:w-1/3">
           <div className="flex gap-3">
             <AiTwotoneSafetyCertificate size={20} />
             <p>12-Month Warranty</p>

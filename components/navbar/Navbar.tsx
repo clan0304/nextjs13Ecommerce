@@ -14,18 +14,18 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex flex-col min-h-10 py-3 ${
+      className={`flex flex-col min-h-20 py-3 ${
         path !== '/' ? 'bg-white block' : 'hidden'
       }`}
     >
-      <div className="flex justify-between ">
-        <div>
+      <div className="flex justify-between w-full">
+        <div className="ml-3 block md:hidden">
           <Menu />
         </div>
         <Link href="/">
-          <div>ABCDDD</div>
+          <div className="self-center">ABCDDD</div>
         </Link>
-        <div className="flex gap-3 mr-2">
+        <div className="flex gap-3 pr-2">
           <Link href="/admin">
             <GrUserAdmin size={20} className="cursor-pointer" />
           </Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
           <FaRegUser size={20} className="cursor-pointer" />
         </div>
       </div>
-      <div className="flex gap-3 justify-around mt-3">
+      <div className="hidden md:flex gap-3 justify-around mt-3">
         <Link href="/collections/wiredheadphones">
           <div>Wired Headphones</div>
         </Link>

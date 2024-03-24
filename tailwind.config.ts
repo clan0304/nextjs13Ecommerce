@@ -17,6 +17,7 @@ const config: Config = {
     fontFamily: {
       benne: ['var(--font-benne)'],
       rubik: ['var(--font-rubik)'],
+      robotoMono: ['var(--font-roboto'],
     },
   },
   plugins: [],

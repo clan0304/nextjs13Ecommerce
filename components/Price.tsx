@@ -45,12 +45,10 @@ const Price = ({ product }: { product: SafeProduct }) => {
           className="hover:cursor-pointer"
         />
       </div>
-      <div className="flex justify-center mt-3">
-        <h3>Total: ${totalItemPrice}</h3>
-      </div>
+
       <div className="w-full flex justify-center">
         <button
-          className="bg-blue-500 text-xl font-semibold text-white mt-2 w-full mx-2 h-10 rounded-md"
+          className="bg-blue-500 text-xl font-semibold text-white mt-5 w-full mx-2 h-10 rounded-md"
           onClick={handleCart}
         >
           Add {quantity} to cart ${totalItemPrice}

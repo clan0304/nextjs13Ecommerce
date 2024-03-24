@@ -13,9 +13,9 @@ const HomeNavbar = () => {
   const path = usePathname();
 
   return (
-    <div className="flex flex-col py-3 h-10 mx-2">
+    <div className="flex flex-col py-3 h-20 mx-2 text-white">
       <div className="flex justify-between gap-3">
-        <div>
+        <div className="block md:hidden">
           <Menu />
         </div>
         <Link href="/">
@@ -23,13 +23,13 @@ const HomeNavbar = () => {
         </Link>
         <div className="flex gap-3 mr-2">
           <Link href="/admin">
-            <GrUserAdmin size={20} />
+            <GrUserAdmin size={25} />
           </Link>
-          <FiShoppingCart onClick={cartModal.onOpen} size={20} />
-          <FaRegUser size={20} />
+          <FiShoppingCart onClick={cartModal.onOpen} size={25} />
+          <FaRegUser size={25} />
         </div>
       </div>
-      <div className="flex gap-3 justify-around mt-3">
+      <div className="hidden md:flex gap-3 justify-around mt-3 ">
         <Link href="/collections/wiredheadphones">
           <div>Wired Headphones</div>
         </Link>

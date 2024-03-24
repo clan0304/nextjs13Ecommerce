@@ -8,7 +8,7 @@ const Collections = async () => {
   const products: SafeProduct[] = await getProducts();
 
   return (
-    <div className="bg-slate-100 pb-10">
+    <div className="bg-slate-100 h-full min-h-[100vh]">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 pt-5">
         {products.map((item) => (
           <Link key={item.id} href={`/collections/${item.id}`}>
