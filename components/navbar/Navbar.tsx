@@ -37,20 +37,6 @@ const Navbar = () => {
           <FaRegUser size={20} className="cursor-pointer" />
         </div>
       </div>
-      <div className="hidden md:flex gap-3 justify-around mt-3">
-        <Link href="/collections/wiredheadphones">
-          <div>Wired Headphones</div>
-        </Link>
-        <Link href="/collections/wirelessheadphones">
-          <div>Wireless Headphones</div>
-        </Link>
-        <Link href="/collections/earphones">
-          <div>Earphones</div>
-        </Link>
-        <Link href="/collections/wirelessearphones">
-          <div>Wireless Earphones</div>
-        </Link>
-      </div>
     </div>
   );
 };

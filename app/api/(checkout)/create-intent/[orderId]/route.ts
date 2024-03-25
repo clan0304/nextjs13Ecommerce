@@ -17,7 +17,7 @@ export const POST = async (
 
   if (order) {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 100 * 100,
+      amount: order.price * 100,
       currency: 'aud',
 
       automatic_payment_methods: {

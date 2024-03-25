@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Success = () => {
-  return <div>abc</div>;
+  return <div className="min-h-[100vh]">abc</div>;
 };
 
 export default Success;

@@ -2,28 +2,30 @@ import { AiTwotoneSafetyCertificate } from 'react-icons/ai';
 
 const Introduction = () => {
   return (
-    <div className="bg-blue-300 flex flex-col w-full pb-5 pl-2">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col w-full pb-5 px-2 bg-indigo-500/70">
+      <div className="flex flex-col gap-2 font-bold text-xl pl-3">
         <p className="my-3">
           Australia&apos;s Marketplace for Sustainable Tech
         </p>
         <p>Explore a wide variety of Headphones, EarPhones</p>
       </div>
-      <div className="bg-white flex lg:flex-row flex-col gap-3 w-4/5 rounded-lg py-5 mt-3 px-2 lg:px-6 lg:gap-6 self-center">
+      <div className="bg-white flex lg:flex-row flex-col gap-y-7 w-4/5 lg:w-full rounded-lg py-5 mt-3 px-2 lg:px-6 lg:gap-6 self-center">
         <div className="flex flex-col gap-2 lg:w-1/3">
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <AiTwotoneSafetyCertificate size={20} />
-            <p>Save Up To 70%</p>
+            <p className="font-semibold text-xl lg:text-2xl">Save Up To 70%</p>
           </div>
-          <p>
+          <p className="">
             Priced just right. Find the best deals for your favorite Headphones,
             Earphones.
           </p>
         </div>
         <div className="flex flex-col gap-2 lg:w-1/3">
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <AiTwotoneSafetyCertificate size={20} />
-            <p>14 Days Free Returns</p>
+            <p className="font-semibold text-xl lg:text-2xl">
+              14 Days Free Returns
+            </p>
           </div>
           <p>
             We guarantee satisfaction. All products are 100% functional and
@@ -33,9 +35,11 @@ const Introduction = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2 lg:w-1/3">
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <AiTwotoneSafetyCertificate size={20} />
-            <p>12-Month Warranty</p>
+            <p className="font-semibold text-xl lg:text-2xl">
+              12-Month Warranty
+            </p>
           </div>
           <p>
             Buy with confidence and enjoy your purchase to the fullest with our
