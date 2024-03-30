@@ -25,25 +25,82 @@ export const useCartStore = create(
           const updatedProducts = products.map((product) =>
             product.id === existingProduct.id
               ? {
-                  ...item,
+                  ...product,
                   quantity: item.quantity + product.quantity,
-                  price: item.price + product.price,
+                  price: product.price + item.price * item.quantity,
                 }
-              : item
+              : product
           );
 
           set((state) => ({
             products: updatedProducts,
             totalItems: state.totalItems + item.quantity,
-            totalPrice: state.totalPrice + item.price,
+            totalPrice: state.totalPrice + item.price * item.quantity,
           }));
         } else {
           set((state) => ({
             products: [...state.products, item],
             totalItems: state.totalItems + item.quantity,
-            totalPrice: state.totalPrice + item.price,
+            totalPrice: state.totalPrice + item.price * item.quantity,
           }));
         }
+      },
+
+      incrementQuantity: (productId: string) => {
+        set((state) => {
+          const products = state.products.map((product) => {
+            if (product.id === productId) {
+              const newQuantity = product.quantity + 1;
+              const newPrice = (product.price / product.quantity) * newQuantity;
+              return {
+                ...product,
+                quantity: newQuantity,
+                price: newPrice,
+              };
+            }
+            return product;
+          });
+
+          const newTotalPrice = products.reduce(
+            (total, product) => total + product.price,
+            0
+          );
+
+          return {
+            ...state,
+            products,
+            totalItems: state.totalItems + 1,
+            totalPrice: newTotalPrice,
+          };
+        });
+      },
+      decrementQuantity: (productId: string) => {
+        set((state) => {
+          const products = state.products.map((product) => {
+            if (product.id === productId && product.quantity > 1) {
+              const newQuantity = product.quantity - 1;
+              const newPrice = (product.price / product.quantity) * newQuantity;
+              return {
+                ...product,
+                quantity: newQuantity,
+                price: newPrice,
+              };
+            }
+            return product;
+          });
+
+          const newTotalPrice = products.reduce(
+            (total, product) => total + product.price,
+            0
+          );
+
+          return {
+            ...state,
+            products,
+            totalItems: state.totalItems > 0 ? state.totalItems - 1 : 0,
+            totalPrice: newTotalPrice,
+          };
+        });
       },
       removeFromCart(item) {
         set((state) => ({

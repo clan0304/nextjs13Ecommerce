@@ -1,13 +1,29 @@
-import { AuthOptions } from 'next-auth';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { AuthOptions, User } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialProvider from 'next-auth/providers/credentials';
-import prisma from '@/app/libs/prismadb';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import prisma from './prismadb';
 import bcrypt from 'bcrypt';
-import NextAuth from 'next-auth/next';
+
+declare module 'next-auth' {
+  interface Session {
+    user: User & {
+      isAdmin: Boolean;
+    };
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    isAdmin: Boolean;
+  }
+}
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
+  session: {
+    strategy: 'jwt',
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -47,15 +63,32 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
+
   pages: {
     signIn: '/',
   },
-  debug: process.env.NODE_ENV !== 'development',
-  session: {
-    strategy: 'jwt',
+
+  callbacks: {
+    async session({ token, session }) {
+      if (token) {
+        session.user.isAdmin = token.isAdmin;
+      }
+
+      return session;
+    },
+    async jwt({ token }) {
+      const userInDb = await prisma.user.findUnique({
+        where: {
+          email: token.email!,
+        },
+      });
+
+      token.isAdmin = userInDb?.isAdmin!;
+
+      return token;
+    },
   },
+  debug: process.env.NODE_ENV !== 'development',
 
   secret: process.env.NEXTAUTH_SECRET,
 };
-
-export default NextAuth(authOptions);

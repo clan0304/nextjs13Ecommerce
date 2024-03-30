@@ -25,8 +25,8 @@ const ProductContainer = ({
           className="rounded-lg group-hover:scale-110"
         />
       </div>
-      <div className="pl-3 flex flex-col gap-2">
-        <p className="font-rubik font-semibold text-lg min-h-[60px] sm:min-h-[100px] lg:min-h-[120px] pt-5 line-clamp-2">
+      <div className="pl-3 flex flex-col gap-3">
+        <p className="font-rubik font-semibold text-lg min-h-[120px] md:min-h-[140px] pt-8 hover:underline">
           {name}
         </p>
         <p>$ {price} AUD</p>

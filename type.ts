@@ -1,7 +1,7 @@
 import { Product } from '@prisma/client';
 
 type CartItemType = {
-  id?: string;
+  id: string;
   name: string;
   image: string;
   price: number;
@@ -18,6 +18,8 @@ export type ActionTypes = {
   addToCart: (item: CartItemType) => void;
   removeFromCart: (item: CartItemType) => void;
   clearProducts: () => void;
+  incrementQuantity: (productId: string) => void;
+  decrementQuantity: (productId: string) => void;
 };
 
 export type SafeProduct = Omit<Product, 'createdAt'> & {

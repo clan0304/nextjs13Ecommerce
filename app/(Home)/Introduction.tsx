@@ -2,14 +2,8 @@ import { AiTwotoneSafetyCertificate } from 'react-icons/ai';
 
 const Introduction = () => {
   return (
-    <div className="flex flex-col w-full pb-5 px-2 bg-indigo-500/70">
-      <div className="flex flex-col gap-2 font-bold text-xl pl-3">
-        <p className="my-3">
-          Australia&apos;s Marketplace for Sustainable Tech
-        </p>
-        <p>Explore a wide variety of Headphones, EarPhones</p>
-      </div>
-      <div className="bg-white flex lg:flex-row flex-col gap-y-7 w-4/5 lg:w-full rounded-lg py-5 mt-3 px-2 lg:px-6 lg:gap-6 self-center">
+    <div className="flex flex-col w-full justify-center items-center py-5 px-2 lg:px-20 bg-gradient-to-b from-indigo-500/70 to-white">
+      <div className="bg-white flex lg:flex-row flex-col gap-y-7 w-4/5 lg:w-full rounded-lg px-2 py-3 lg:px-6 lg:gap-6 self-center">
         <div className="flex flex-col gap-2 lg:w-1/3">
           <div className="flex gap-3 items-center">
             <AiTwotoneSafetyCertificate size={20} />

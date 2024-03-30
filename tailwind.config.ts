@@ -17,7 +17,17 @@ const config: Config = {
     fontFamily: {
       benne: ['var(--font-benne)'],
       rubik: ['var(--font-rubik)'],
-      robotoMono: ['var(--font-roboto'],
+      robotoMono: ['var(--font-roboto)'],
+      rakkas: ['var(--font-rakkas)'],
+      dmSans: ['var(--font-dmsans)'],
+      caveat: ['var(--font-caveat)'],
+    },
+    screens: {
+      xs: '380px',
+      sm: '624px',
+      md: '800px',
+      lg: '1024px',
+      xl: '1400px',
     },
   },
   plugins: [],

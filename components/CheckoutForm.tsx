@@ -73,7 +73,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit} className="mx-3">
+    <form id="payment-form" onSubmit={handleSubmit} className="mx-3 my-5">
       <PaymentElement id="payment-element" options={{ layout: 'tabs' }} />
       <AddressForm />
       <button
