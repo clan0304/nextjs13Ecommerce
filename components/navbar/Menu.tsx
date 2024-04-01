@@ -104,7 +104,7 @@ const Menu = () => {
                       <MdOutlineKeyboardArrowRight size={15} />
                     )}
                   </div>
-                  <div className="absolute -top-5 left-9">
+                  <div className="absolute -top-4 left-9">
                     <ProfileModal />
                   </div>
                 </div>
