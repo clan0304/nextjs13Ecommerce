@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { IoMenuSharp } from 'react-icons/io5';
@@ -35,7 +36,7 @@ const Menu = () => {
       <IoMenuSharp
         size={20}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="hover:cursor-pointer"
+        className="hover:cursor-pointer hover:opacity-20"
       />
       {isMenuOpen && (
         <div className="absolute left-0 z-50 top-0 w-full h-full min-h-screen overflow-y-auto bg-white flex flex-col px-2 text-black pt-6 pl-5 pb-10 gap-y-3">
@@ -44,7 +45,7 @@ const Menu = () => {
               size={20}
               color="black"
               onClick={() => setIsMenuOpen(false)}
-              className="hover:cursor-pointer"
+              className="hover:cursor-pointer hover:opacity-30"
             />
           </div>
 
@@ -110,9 +111,9 @@ const Menu = () => {
                 </div>
               ) : (
                 <FaRegUser
-                  className="hover:cursor-pointer"
+                  className="hover:cursor-pointer hover:text-indigo-500"
                   onClick={() => router.push('/login')}
-                  size={20}
+                  size={30}
                 />
               )}
             </div>

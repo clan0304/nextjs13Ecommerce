@@ -32,7 +32,7 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center xs:gap-3 w-full">
-        <div className="ml-3 block md:hidden">
+        <div className="ml-3 block md:hidden ">
           <Menu />
         </div>
         <Link href="/">
@@ -50,7 +50,7 @@ const Navbar = () => {
             <Link href="/admin">
               <GrUserAdmin
                 size={20}
-                className="cursor-pointer hidden xs:block"
+                className="cursor-pointer hidden xs:block hover:opacity-70"
               />
             </Link>
           )}
@@ -58,7 +58,7 @@ const Navbar = () => {
           <FiShoppingCart
             onClick={cartModal.onOpen}
             size={20}
-            className="cursor-pointer"
+            className="cursor-pointer hover:opacity-20"
           />
           <div className="hidden sm:block">
             {session?.user ? (
@@ -71,7 +71,7 @@ const Navbar = () => {
                   className="rounded-full hover:cursor-pointer"
                 />{' '}
                 <div
-                  className="self-end hover:opacity-70 hover:cursor-pointer"
+                  className="self-end hover:opacity-20 hover:cursor-pointer"
                   onClick={() => profileMenuModal.onClick()}
                 >
                   {profileMenuModal.isOpen ? (
@@ -86,7 +86,7 @@ const Navbar = () => {
               </div>
             ) : (
               <FaRegUser
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:opacity-20"
                 onClick={() => router.push('/login')}
                 size={20}
               />

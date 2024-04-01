@@ -45,7 +45,7 @@ const HomeNavbar = () => {
         </Link>
         <div className="flex gap-3 mr-2">
           {session?.user.isAdmin && (
-            <Link href="/admin">
+            <Link href="/admin" className="hover:opacity-70">
               <GrUserAdmin size={20} />
             </Link>
           )}
@@ -53,7 +53,7 @@ const HomeNavbar = () => {
           <FiShoppingCart
             onClick={cartModal.onOpen}
             size={20}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer hover:opacity-70"
           />
           <div className="hidden sm:block">
             {session?.user ? (
@@ -81,7 +81,7 @@ const HomeNavbar = () => {
               </div>
             ) : (
               <FaRegUser
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:opacity-70"
                 onClick={() => router.push('/login')}
                 size={20}
               />

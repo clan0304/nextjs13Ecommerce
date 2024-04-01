@@ -1,3 +1,5 @@
+'use client';
+
 import useProfileMenuModal from '@/app/hooks/useProfileMenuModal';
 import { signOut } from 'next-auth/react';
 
