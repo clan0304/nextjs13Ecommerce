@@ -22,7 +22,7 @@ const Footer = () => {
           <p className="text-md sm:text-lg">Earphones</p>
         </Link>
       </div>
-      <p className="text-[10px] xs:text-md">
+      <p className="text-[10px] xs:text-md sm:text-[16px]">
         © Jay Headphones, Melbourne, 3000, VIC
       </p>
     </div>

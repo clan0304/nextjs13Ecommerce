@@ -13,6 +13,8 @@ import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import useProfileMenuModal from '../hooks/useProfileMenuModal';
 import ProfileModal from '@/components/modals/ProfileModal';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 const HomeNavbar = () => {
   const cartModal = useCartModal();
@@ -55,17 +57,24 @@ const HomeNavbar = () => {
           />
           <div className="hidden sm:block">
             {session?.user ? (
-              <div
-                onClick={() => profileMenuModal.onClick()}
-                className="relative"
-              >
+              <div className="relative flex gap-1">
                 <Image
                   src={session.user.image!}
                   alt="User Image"
                   width={20}
                   height={20}
-                  className="rounded-full"
+                  className="rounded-full hover:cursor-pointer"
                 />{' '}
+                <div
+                  className="self-end hover:opacity-70 hover:cursor-pointer"
+                  onClick={() => profileMenuModal.onClick()}
+                >
+                  {profileMenuModal.isOpen ? (
+                    <MdOutlineKeyboardArrowUp size={15} />
+                  ) : (
+                    <MdOutlineKeyboardArrowDown size={15} />
+                  )}
+                </div>
                 <div className="absolute top-6 right-3">
                   <ProfileModal />
                 </div>

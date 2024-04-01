@@ -9,6 +9,8 @@ import { useRouter } from 'next/navigation';
 import useProfileMenuModal from '@/app/hooks/useProfileMenuModal';
 import Image from 'next/image';
 import ProfileModal from '../modals/ProfileModal';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,20 +84,27 @@ const Menu = () => {
             >
               Earphone
             </Link>
-            <div className="border-t-2 w-full flex justify-center pt-5 md:hidden">
+            <div className="border-t-2 w-full flex justify-center pt-8 md:hidden">
               {session?.user ? (
-                <div
-                  onClick={() => profileMenuModal.onClick()}
-                  className="relative"
-                >
+                <div className="relative flex gap-1">
                   <Image
                     src={session.user.image!}
                     alt="User Image"
-                    width={40}
-                    height={40}
-                    className="rounded-full"
+                    width={30}
+                    height={30}
+                    className="rounded-full hover:cursor-pointer"
                   />{' '}
-                  <div className="absolute left-7 -top-3">
+                  <div
+                    className="self-center hover:opacity-70 hover:cursor-pointer"
+                    onClick={() => profileMenuModal.onClick()}
+                  >
+                    {profileMenuModal.isOpen ? (
+                      <MdOutlineKeyboardArrowLeft size={15} />
+                    ) : (
+                      <MdOutlineKeyboardArrowRight size={15} />
+                    )}
+                  </div>
+                  <div className="absolute -top-5 left-9">
                     <ProfileModal />
                   </div>
                 </div>
