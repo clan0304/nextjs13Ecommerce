@@ -22,7 +22,7 @@ export default function Home() {
             className="brightness-90"
           />
           <Link href="/collections">
-            <button className="absolute left-1/2 transform -translate-x-1/2 text-lg md:text-xl lg:text-2xl 2xl:text-3xl bottom-[1.5rem] lg:bottom-[2rem] xl:bottom-[3rem] 2xl:bottom-[5rem] 3xl:bottom-[10%] bg-white px-8 sm:px-10 md:px-14 lg:px-20 rounded-xl py-1.5 md:py-2.5 lg:py-4 font-roboto font-bold hover:scale-125">
+            <button className="absolute left-1/2 transform -translate-x-1/2 text-md xs:text-lg md:text-xl lg:text-2xl 2xl:text-3xl bottom-[1.5rem] lg:bottom-[2rem] xl:bottom-[3rem] 2xl:bottom-[5rem] 3xl:bottom-[10%] bg-white px-6 xs:px-8 sm:px-10 md:px-14 lg:px-20 rounded-xl py-1.5 md:py-2.5 lg:py-4 font-roboto font-bold hover:scale-125">
               Shop Now
             </button>
           </Link>

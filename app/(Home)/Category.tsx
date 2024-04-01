@@ -34,8 +34,8 @@ const categoryArray = [
 
 const Category = () => {
   return (
-    <div className="flex flex-col">
-      <div className="self-center pt-10 py-3 text-3xl font-extrabold lg:text-5xl font-rakkas tracking-wider">
+    <div className="flex flex-col px-2">
+      <div className="self-center pt-10 text-3xl font-extrabold lg:text-5xl font-rakkas tracking-wider">
         By Category
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-5 my-10">
@@ -48,7 +48,7 @@ const Category = () => {
               <div className="flex items-center justify-center font-semibold text-md w-3/5 pt-3 min-h-[60px] hover:underline">
                 {item.name}
               </div>
-              <button className="bg-indigo-500/70 font-semibold mt-4 rounded-xl text-black hover:bg-black hover:text-white px-7 py-1 border-black">
+              <button className="bg-indigo-500/70 text-sm sm:text-md font-semibold mt-4 rounded-xl text-black hover:bg-black hover:text-white px-4 py-1 xs:px-6 xs:py-1 border-black">
                 Show Now
               </button>
             </div>

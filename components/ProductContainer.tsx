@@ -26,7 +26,7 @@ const ProductContainer = ({
         />
       </div>
       <div className="pl-3 flex flex-col gap-3">
-        <p className="font-rubik font-semibold text-lg min-h-[120px] md:min-h-[140px] pt-8 hover:underline">
+        <p className="font-rubik font-semibold text-md sm:text-lg min-h-[120px] md:min-h-[140px] pt-8 hover:underline">
           {name}
         </p>
         <p>$ {price} AUD</p>

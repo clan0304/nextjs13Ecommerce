@@ -10,19 +10,19 @@ const Footer = () => {
           href="/collections/wirelessheadphones"
           className="hover:underline"
         >
-          <p>Wireless Headphones</p>
+          <p className="text-md sm:text-lg">Wireless Headphones</p>
         </Link>
         <Link href="/collections/wiredheadphones" className="hover:underline">
-          <p>Wired Headphones</p>
+          <p className="text-md sm:text-lg">Wired Headphones</p>
         </Link>
         <Link href="/collections/wirelessearphones" className="hover:underline">
-          <p>Wireless Earphones</p>
+          <p className="text-md sm:text-lg">Wireless Earphones</p>
         </Link>
         <Link href="/collections/earphones" className="hover:underline">
-          <p>Earphones</p>
+          <p className="text-md sm:text-lg">Earphones</p>
         </Link>
       </div>
-      <p className="text-sm xs:text-lg">
+      <p className="text-[10px] xs:text-md">
         © Jay Headphones, Melbourne, 3000, VIC
       </p>
     </div>
