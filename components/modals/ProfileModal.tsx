@@ -8,12 +8,12 @@ const ProfileModal = () => {
   return (
     <div>
       {profileMenuModal.isOpen && (
-        <div className="bg-slate-300  ml-3 flex flex-col w-full border-2 border-white p-3 rounded-lg">
+        <div className="bg-white text-black flex flex-col w-full border-2 border-black rounded-lg">
           <div>
-            <p className="text-md sm:text-lg lg:text-xl">Order</p>
+            <p className="ml-2 text-sm md:text-md">Order</p>
           </div>
           <div className="border-black border-t-2" onClick={() => signOut}>
-            <p className="text-md sm:text-lg lg:text-xl">Sign Out</p>
+            <p className="ml-2 text-sm md:text-md">Sign Out</p>
           </div>
         </div>
       )}
