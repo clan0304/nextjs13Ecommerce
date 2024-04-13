@@ -12,12 +12,37 @@ import Image from 'next/image';
 import ProfileModal from '../modals/ProfileModal';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
   const router = useRouter();
   const profileMenuModal = useProfileMenuModal();
+
+  const listVariants = {
+    closed: {
+      x: '100vw',
+    },
+    opened: {
+      x: 0,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -39,7 +64,12 @@ const Menu = () => {
         className="hover:cursor-pointer hover:opacity-20"
       />
       {isMenuOpen && (
-        <div className="absolute left-0 z-50 top-0 w-full h-full min-h-screen overflow-y-auto bg-white flex flex-col px-2 text-black pt-6 pl-5 pb-10 gap-y-3">
+        <motion.div
+          variants={listVariants}
+          initial="closed"
+          animate="opened"
+          className="absolute left-0 z-50 top-0 w-full h-full min-h-screen overflow-y-auto bg-white flex flex-col px-2 text-black pt-6 pl-5 pb-10 gap-y-3"
+        >
           <div className="absolute top-0 pt-6 pl-5 z-50">
             <IoMdClose
               size={20}
@@ -49,7 +79,10 @@ const Menu = () => {
             />
           </div>
 
-          <div className="flex flex-col place-self-center gap-y-20 items-center justify-center font-dmSans text-3xl/8 mt-20">
+          <motion.div
+            variants={listItemVariants}
+            className="flex flex-col place-self-center gap-y-20 items-center justify-center font-dmSans text-3xl/8 mt-20"
+          >
             <Link
               href="/collections"
               className="hover:text-indigo-500 hover:scale-110"
@@ -117,8 +150,8 @@ const Menu = () => {
                 />
               )}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
     </div>
   );
