@@ -14,7 +14,7 @@ const ProfileModal = () => {
           </div>
           <div
             className="border-black border-t-2 hover:bg-indigo-200 hover:cursor-pointer"
-            onClick={() => signOut}
+            onClick={() => signOut()}
           >
             <p className="ml-2 text-sm md:text-md text-red-600">Sign Out</p>
           </div>
