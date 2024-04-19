@@ -4,14 +4,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { IoMenuSharp } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
-import { FaRegUser } from 'react-icons/fa';
+
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import useProfileMenuModal from '@/app/hooks/useProfileMenuModal';
-import Image from 'next/image';
-import ProfileModal from '../modals/ProfileModal';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
+
 import { motion } from 'framer-motion';
 
 const Menu = () => {
@@ -118,38 +115,6 @@ const Menu = () => {
             >
               Earphone
             </Link>
-            <div className="border-t-2 w-full flex justify-center pt-8 md:hidden">
-              {session?.user ? (
-                <div className="relative flex gap-1">
-                  <Image
-                    src={session.user.image!}
-                    alt="User Image"
-                    width={30}
-                    height={30}
-                    className="rounded-full hover:cursor-pointer"
-                  />{' '}
-                  <div
-                    className="self-center hover:opacity-70 hover:cursor-pointer"
-                    onClick={() => profileMenuModal.onClick()}
-                  >
-                    {profileMenuModal.isOpen ? (
-                      <MdOutlineKeyboardArrowLeft size={15} />
-                    ) : (
-                      <MdOutlineKeyboardArrowRight size={15} />
-                    )}
-                  </div>
-                  <div className="absolute -top-4 left-9">
-                    <ProfileModal />
-                  </div>
-                </div>
-              ) : (
-                <FaRegUser
-                  className="hover:cursor-pointer hover:text-indigo-500"
-                  onClick={() => router.push('/login')}
-                  size={30}
-                />
-              )}
-            </div>
           </motion.div>
         </motion.div>
       )}

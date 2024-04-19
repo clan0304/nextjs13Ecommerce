@@ -35,7 +35,7 @@ const HomeNavbar = () => {
         </div>
         <Link href="/">
           <div className="relative ml-4 items-center gap-1 hover:scale-110 hover:font-bold">
-            <p className="font-caveat text-md xs:text-xl sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">
+            <p className="font-caveat text-sm xs:text-xl sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">
               JAY HEADPHONES
             </p>
             <div className="hidden xs:block absolute -top-4 -right-7 sm:-top-4 sm:-right-9">
@@ -55,7 +55,7 @@ const HomeNavbar = () => {
             size={20}
             className="hover:cursor-pointer hover:opacity-70"
           />
-          <div className="hidden sm:block">
+          <div>
             {session?.user ? (
               <div className="relative flex gap-1">
                 <Image
