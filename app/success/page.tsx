@@ -29,12 +29,20 @@ const Success = () => {
         <p className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl">
           Thanks for your order!
         </p>
-        <button
-          className="bg-indigo-500 px-7 py-2 rounded-xl text-xl font-semibold hover:opacity-70"
-          onClick={() => router.push('/collections')}
-        >
-          Continue to Shopping
-        </button>
+        <div className="flex flex-col md:flex-row gap-2">
+          <button
+            className="bg-white ring-1 ring-black text-indigo-500 px-7 py-2 rounded-xl text-md md:text-lg font-semibold hover:opacity-70"
+            onClick={() => router.push('/')}
+          >
+            Back to Home
+          </button>
+          <button
+            className="bg-indigo-500 text-white px-7 py-2 rounded-xl text-md md:text-lg font-semibold hover:opacity-70"
+            onClick={() => router.push('/collections')}
+          >
+            Continue to Shopping
+          </button>
+        </div>
       </div>
     </div>
   );
