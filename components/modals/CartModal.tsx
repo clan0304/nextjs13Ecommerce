@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { CiSquarePlus } from 'react-icons/ci';
 import { CiSquareMinus } from 'react-icons/ci';
 import { useSession } from 'next-auth/react';
+import { toast } from 'react-hot-toast';
 
 const CartModal = () => {
   const cartModal = useCartModal();
@@ -29,26 +30,30 @@ const CartModal = () => {
   }, []);
 
   const handleCheckout = async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: session?.user?.email,
-          price: totalPrice,
-          products,
-        }),
-      });
+    if (!products || products.length === 0) {
+      toast.error('No Products are added.');
+    } else {
+      try {
+        setIsLoading(true);
+        const res = await fetch('/api/orders', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: session?.user?.email,
+            price: totalPrice,
+            products,
+          }),
+        });
 
-      const data = await res.json();
-      setIsLoading(false);
+        const data = await res.json();
+        setIsLoading(false);
 
-      cartModal.onClose();
-      router.push(`/pay/${data.id}`);
-    } catch (error) {
-      setIsLoading(false);
-      console.log(error);
+        cartModal.onClose();
+        router.push(`/pay/${data.id}`);
+      } catch (error) {
+        setIsLoading(false);
+        console.log(error);
+      }
     }
   };
 
