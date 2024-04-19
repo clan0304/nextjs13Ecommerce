@@ -8,9 +8,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { CiSquarePlus } from 'react-icons/ci';
 import { CiSquareMinus } from 'react-icons/ci';
+import { useSession } from 'next-auth/react';
 
 const CartModal = () => {
   const cartModal = useCartModal();
+  const { data: session } = useSession();
 
   const {
     products,
@@ -33,6 +35,7 @@ const CartModal = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          email: session?.user?.email,
           price: totalPrice,
           products,
         }),

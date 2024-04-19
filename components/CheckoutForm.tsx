@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  LinkAuthenticationElement,
   PaymentElement,
   useElements,
   useStripe,
@@ -74,6 +75,7 @@ const CheckoutForm = () => {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit} className="mx-3 my-5">
+      <LinkAuthenticationElement id="link-authentication-element" />
       <PaymentElement id="payment-element" options={{ layout: 'tabs' }} />
       <AddressForm />
       <button
