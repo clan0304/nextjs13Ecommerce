@@ -60,7 +60,7 @@ const CheckoutForm = () => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: '/success',
+        return_url: 'https://nextjs13-ecommerce-nu.vercel.app/success',
       },
     });
 
