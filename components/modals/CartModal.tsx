@@ -11,6 +11,7 @@ import { CiSquareMinus } from 'react-icons/ci';
 
 const CartModal = () => {
   const cartModal = useCartModal();
+
   const {
     products,
     totalPrice,
@@ -27,6 +28,7 @@ const CartModal = () => {
 
   const handleCheckout = async () => {
     try {
+      setIsLoading(true);
       const res = await fetch('http://localhost:3000/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -37,10 +39,12 @@ const CartModal = () => {
       });
 
       const data = await res.json();
+      setIsLoading(false);
 
       cartModal.onClose();
       router.push(`/pay/${data.id}`);
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   };
@@ -76,7 +80,6 @@ const CartModal = () => {
                 </div>
                 <div className="flex items-center  justify-end sm:justify-center w-1/5 sm:w-2/5 flex-col sm:flex-row sm:gap-5">
                   <div className="flex flex-col sm:justify-between gap-2 my-3  items-center">
-                    <p>$ {product.price}</p>
                     <div className="flex gap-1 items-center">
                       <CiSquareMinus
                         size={25}
@@ -90,6 +93,7 @@ const CartModal = () => {
                         className="hover:cursor-pointer"
                       />
                     </div>
+                    <p>$ {product.price}</p>
                   </div>
                   <div
                     className="mb-2 text-red-600 hover:underline hover:cursor-pointer"
