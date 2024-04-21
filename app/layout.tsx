@@ -65,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${benne.variable} ${rubik.variable} ${roboto.variable} ${rakkas.variable} ${dmSans.variable} ${caveat.variable}`}
+        className={`${benne.variable} ${rubik.variable} ${roboto.variable} ${rakkas.variable} ${dmSans.variable} ${caveat.variable} min-w-[250px]`}
       >
         {' '}
         <AuthProvider>
