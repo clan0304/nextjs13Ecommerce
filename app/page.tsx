@@ -8,8 +8,8 @@ import Category from './(Home)/Category';
 
 export default function Home() {
   return (
-    <main className="w-full flex flex-col">
-      <div className="relative w-full max-h-[100vh] lg:max-h-full lg:min-h-[100vh] aspect-[1/1] md:aspect-[4/3] lg:aspect-[16/9]">
+    <main className="w-full flex flex-col min-w-[250px]">
+      <div className="relative w-full max-h-[100vh] lg:max-h-full lg:min-h-[100vh] aspect-[1/1] md:aspect-[4/3] lg:aspect-[16/9] min-w-[250px]">
         <div className="z-20 w-full absolute top-0 left-0">
           <HomeNavbar />
         </div>
