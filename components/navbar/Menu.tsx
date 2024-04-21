@@ -78,7 +78,7 @@ const Menu = () => {
 
           <motion.div
             variants={listItemVariants}
-            className="flex flex-col place-self-center gap-y-20 items-center justify-center font-dmSans text-3xl/8 mt-20"
+            className="flex flex-col place-self-center text-center gap-y-20 items-center justify-center font-dmSans text-3xl/8 mt-20"
           >
             <Link
               href="/collections"
