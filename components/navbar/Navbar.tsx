@@ -25,6 +25,8 @@ const Navbar = () => {
   const { data: session } = useSession();
   const profileMenuModal = useProfileMenuModal();
 
+  const isActive = (href: any) => path === href;
+
   return (
     <div
       className={`flex flex-col justify-center min-h-20 mx-2 mt-2 py-3 border-b-2 ${
@@ -94,29 +96,49 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex mt-10 hidden justify-start ml-5">
+      <div className="md:flex mt-10 hidden justify-start ml-5 gap-2">
         <Link href="/collections">
-          <div className="border-2 px-3 rounded-md hover:bg-indigo-300">
+          <div
+            className={`border-2 px-3 rounded-md hover:bg-indigo-300 ${
+              isActive('/collections') ? 'bg-indigo-300' : ''
+            }`}
+          >
             All Products
           </div>
         </Link>
         <Link href="/collections/wirelessheadphones">
-          <div className="border-2 px-3 rounded-md hover:bg-indigo-300">
+          <div
+            className={`border-2 px-3 rounded-md hover:bg-indigo-300 ${
+              isActive('/collections/wirelessheadphones') ? 'bg-indigo-300' : ''
+            }`}
+          >
             Wireless Headphone
           </div>
         </Link>
         <Link href="/collections/wirelessearphones">
-          <div className="border-2 px-3 rounded-md hover:bg-indigo-300">
+          <div
+            className={`border-2 px-3 rounded-md hover:bg-indigo-300 ${
+              isActive('/collections/wirelessearphones') ? 'bg-indigo-300' : ''
+            }`}
+          >
             Wireless Earphone
           </div>
         </Link>
         <Link href="/collections/wiredheadphones">
-          <div className="border-2 px-3 rounded-md hover:bg-indigo-300">
+          <div
+            className={`border-2 px-3 rounded-md hover:bg-indigo-300 ${
+              isActive('/collections/wiredheadphones') ? 'bg-indigo-300' : ''
+            }`}
+          >
             Wired Headphone
           </div>
         </Link>
         <Link href="/collections/earphones">
-          <div className="px-3 rounded-md hover:bg-indigo-300 border-2">
+          <div
+            className={`px-3 rounded-md hover:bg-indigo-300 border-2 ${
+              isActive('/collections/earphones') ? 'bg-indigo-300' : ''
+            }`}
+          >
             Earphone
           </div>
         </Link>

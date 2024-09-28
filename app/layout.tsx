@@ -12,6 +12,7 @@ import { Roboto } from 'next/font/google';
 import { Rakkas } from 'next/font/google';
 import { DM_Sans } from 'next/font/google';
 import { Caveat } from 'next/font/google';
+
 import AuthProvider from '@/components/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
